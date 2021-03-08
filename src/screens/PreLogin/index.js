@@ -6,12 +6,14 @@ import DefaultButton from "../../components/molecules/DefaultButton";
 import { Container, BtnToNavigate, TextEventos, TextArtigos, TextBtn } from './style';
 import { LinearGradient } from 'expo-linear-gradient';
 
+import http from '../../utils/http';
+
 const PreLogin = () => {
 
   const navigation = useNavigation();
 
   const navigateToSignIn = () => {
-    navigation.navigate('SignIn');
+    navigation.navigate('Login');
   }
   const image = require('../../assets/welcome.png');
   return (
@@ -28,7 +30,7 @@ const PreLogin = () => {
             <View style={{width: '100%' }}>
               <DefaultButton
                 title="Entrar"
-                onPress={()=>navigation.navigate(AuthScreens.Login)}/>
+                onPress={()=> navigateToSignIn()}/>
             </View>
           </View>
         </ImageBackground>
